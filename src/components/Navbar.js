@@ -8,6 +8,7 @@ const Navbar = () => {
   return (
     <nav>
       <h1>Shopping Cart</h1>
+      <span>useReducer</span>
       <div id="nav-cart-item-count">Items in Cart: {totalItems}</div>
     </nav>
   );
