@@ -2,8 +2,12 @@ import React, { createContext, useReducer, useEffect, useState } from "react";
 
 // Initial state
 const initialState = {
-  cart: [],
+  cart: [
+    { id: 1, name: "Apple", price: 2, quantity: 0 },
+    { id: 2, name: "Banana", price: 1, quantity: 0 },
+  ]
 };
+
 
 // Reducer
 const cartReducer = (state, action) => {
