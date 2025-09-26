@@ -25,11 +25,12 @@ const CartItem = ({ item }) => {
       </button>
 
       <button
-        id={`cart-item-remove-${item.id}`} 
-        onClick={() => dispatch({ type: "REMOVE_ITEM", payload: item.id })}
-      >
-        Remove
-      </button>
+  id={`cart-item-remove-${item.id}`}
+  onClick={() => dispatch({ type: "REMOVE_ITEM", payload: item.id })}
+>
+  Remove
+</button>
+
     </li>
   );
 };

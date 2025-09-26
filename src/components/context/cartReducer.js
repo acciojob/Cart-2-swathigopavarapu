@@ -22,29 +22,28 @@ export const cartReducer = (state, action) => {
           cart: [...state.cart, { ...action.payload, quantity: 1 }],
         };
       }
+      case "INCREMENT":
+  return {
+    ...state,
+    cart: state.cart.map(item =>
+      item.id === action.payload
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    ),
+  };
 
-    case "INCREMENT":
-      return {
-        ...state,
-        cart: state.cart.map(item =>
-          item.id === action.payload
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        ),
-      };
+case "DECREMENT":
+  return {
+    ...state,
+    cart: state.cart.map(item =>
+      item.id === action.payload && item.quantity > 1
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    ),
+  };
 
-    case "DECREMENT":
-      return {
-        ...state,
-        cart: state.cart
-          .map(item =>
-            item.id === action.payload
-              ? { ...item, quantity: item.quantity - 1 }
-              : item
-          )
-          .filter(item => item.quantity > 0),
-      };
 
+    
     case "REMOVE_ITEM":
       return {
         ...state,
